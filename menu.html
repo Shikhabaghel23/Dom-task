@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu</title>
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 50px;
+}
+
+h1 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab {
+  border: none;
+  background-color: #fff;
+  color: #666;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.tab.active {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.tab:hover {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 600px;
+  max-width: 200px;
+}
+
+.menu-item img {
+  width: 267px;
+  height: 167px;
+  margin-right: 20px;
+  border: 3px solid #ffc107;
+  border-radius: 5px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-details h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffc107;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+}
+
+.menu-card {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 600px;
+  max-width: 200px;
+}
+
+.menu-card img {
+  width: 267px;
+  height: 167px;
+  margin-right: 20px;
+  border: 3px solid #ffc107;
+  border-radius: 5px;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.dish-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.dish-price {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffc107;
+  margin-bottom: 10px;
+}
+
+.dish-desc {
+  font-size: 14px;
+  color: #666;
+}
+</style>
+</head>
+<body>
+
+<h1>Our Menu</h1>
+<div class="menu-tabs">
+  <button type="button" class="tab" id="allBtn">All</button>
+  <button type="button" class="tab" id="breakfastBtn">Breakfast</button>
+  <button type="button" class="tab" id="lunchBtn">Lunch</button>
+  <button type="button" class="tab" id="shakesBtn">Shakes</button>
+  <button type="button" class="tab" id="dinnerBtn">Dinner</button>
+</div>
+
+<div class="menu-item" id="shakes">
+    <img src="./img/shakes(1).jpg" alt="shake">
+    <div class="item-details">
+    <h2>Shake</h2>
+    <p class="price">$25</p>
+    <p class="description">Shake</p>
+    </div>
+</div>
+
+<div class="menu-item" id="lunch">
+    <img src="./img/thali(1).jpg" alt="lunch">
+    <div class="item-details">
+    <h2>Veg Thali</h2>
+    <p class="price">$30</p>
+    <p class="description">Roti, sabji, chaval, daal, rayta</p>
+    </div>
+</div>
+
+<div class="menu-item" id="dinner">
+    <img src="./img/dinner(1).jpg" alt="dinner">
+    <div class="item-details">
+    <h2>Veg Thali</h2>
+    <p class="price">$30</p>
+    <p class="description">Roti, sabji, chaval, daal, rayta</p>
+    </div>
+</div>
+
+<div class="menu-item" id="shakes">
+    <img src="./img/shakes(2).jpg" alt="shake">
+    <div class="item-details">
+    <h2>Shake</h2>
+    <p class="price">$25</p>
+    <p class="description">Shake</p>
+    </div>
+</div>
+
+<div class="menu-item" id="breakfast">
+    <img src="./img/breakfast(2).jpg" alt="breakfast">
+    <div class="item-details">
+    <h2>Breakfast</h2>
+    <p class="price">$15</p>
+    <p class="description">Dosa idli</p>
+    </div>
+</div>
+
+<div class="menu-item" id="lunch">
+    <img src="./img/thali(2).jpg" alt="lunch">
+    <div class="item-details">
+    <h2>Veg Thali</h2>
+    <p class="price">$20</p>
+    <p class="description">Roti, sabji, chaval, daal, rayta</p>
+    </div>
+</div>
+
+<div class="menu-item" id="dinner">
+    <img src="./img/dinner(2).jpg" alt="dinner">
+    <div class="item-details">
+    <h2>Veg Thali</h2>
+    <p class="price">$20</p>
+    <p class="description">Roti, sabji, chaval, daal, rayta</p>
+    </div>
+</div>
+
+<div class="menu-item" id="shakes">
+    <img src="./img/shakes(5).jpg" alt="shake">
+    <div class="item-details">
+    <h2>Shake</h2>
+    <p class="price">$25</p>
+    <p class="description">Shake</p>
+    </div>
+</div>
+
+<div class="menu-item" id="breakfast">
+    <img src="./img/breakfast(3).jpg" alt="breakfast">
+    <div class="item-details">
+    <h2>Idli Dosa</h2>
+    <p class="price">$15</p>
+    <p class="description">Idli dosa</p>
+    </div>
+</div>
+
+<div class="menu-item" id="lunch">
+    <img src="./img/thali(3).jpg" alt="lunch">
+    <div class="item-details">
+    <h2>Veg Thali</h2>
+    <p class="price">$20</p>
+    <p class="description">Roti, sabji, chaval, daal, rayta</p>
+    </div>
+</div>
+
+<div class="menu-item" id="dinner">
+    <img src="./img/dinner(3).jpg" alt="dinner">
+    <div class="item-details">
+    <h2>Veg Thali</h2>
+    <p class="price">$20</p>
+    <p class="description">Roti, sabji, chaval, daal, rayta</p>
+    </div>
+</div>
+
+<script>
+const items = document.querySelectorAll(".menu-item");
+
+document.querySelector('#breakfastBtn').addEventListener('click', function() {
+    items.forEach(item => {
+        if (item.id !== 'breakfast') {
+            item.style.display = 'none';
+        } else {
+            item.style.display = 'flex';
+        }
+    });
+});
+
+document.querySelector('#lunchBtn').addEventListener('click', function() {
+    items.forEach(item => {
+        if (item.id !== 'lunch') {
+            item.style.display = 'none';
+        } else {
+            item.style.display = 'flex';
+        }
+    });
+});
+
+document.querySelector('#shakesBtn').addEventListener('click', function() {
+    items.forEach(item => {
+        if (item.id !== 'shakes') {
+            item.style.display = 'none';
+        } else {
+            item.style.display = 'flex';
+        }
+    });
+});
+
+document.querySelector('#dinnerBtn').addEventListener('click', function() {
+    items.forEach(item => {
+        if (item.id !== 'dinner') {
+            item.style.display = 'none';
+        } else {
+            item.style.display = 'flex';
+        }
+    });
+});
+
+document.querySelector('#allBtn').addEventListener('click', function() {
+    items.forEach(item => {
+        item.style.display = 'flex';
+    });
+});
+</script>
+
+</body>
+</html>

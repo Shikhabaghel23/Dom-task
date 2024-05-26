@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <!-- styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            color: #333;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .menuBtn {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            font-size: 20px;
+            background: transparent;
+            border: none;
+            color: #444;
+            cursor: pointer;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+        }
+
+        .close-btn {
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            color: #c00;
+            cursor: pointer;
+        }
+
+        .logo {
+            height: 100px;
+        }
+
+        .links a {
+            display: block;
+            font-size: 16px;
+            padding: 10px 15px;
+            color: #777;
+        }
+
+        .links a:hover {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .social-icons {
+            justify-self: center;
+            display: flex;
+            padding-bottom: 20px;
+        }
+
+        .social-icons a {
+            font-size: 16px;
+            margin: 0 5px;
+            color: #777;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .show-sidebar {
+            transform: translateX(0);
+        }
+
+        @media screen and (min-width: 676px) {
+            .sidebar {
+                width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="menuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="./img/coding(1).jpg" class="logo" alt="logo">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="social-icons">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-behance"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fab fa-sketch"></i></a></li>
+        </ul>
+    </div>
+
+    <script>
+        const menuBtn = document.querySelector(".menuBtn");
+        const closeBtn = document.querySelector(".close-btn");
+        const sidebar = document.querySelector(".sidebar");
+
+        menuBtn.addEventListener("click", function () {
+            sidebar.classList.toggle("show-sidebar");
+        });
+
+        closeBtn.addEventListener("click", function () {
+            sidebar.classList.remove("show-sidebar");
+        });
+    </script>
+</body>
+
+</html>

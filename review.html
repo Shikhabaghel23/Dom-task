@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {  
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            /* background-color: aquamarine; */
+        }
+
+        .container {
+            height: 775px;
+            padding-top: 50px;
+            text-align: center;
+            background-color: aquamarine;
+        }
+
+        h1 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .review {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .image {
+            height: 170px;
+            width: 170px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: darksalmon;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: salmon;
+        }
+    </style>
+</head>
+<body>
+
+<section class="container">
+    <h1>Our Review</h1>
+    <div class="review">
+        <img src="" alt="person" class="image" id="person-img" />
+        <h2 id="author">Author Name</h2>
+        <h3 id="job">Job</h3>
+        <p id="info">Info</p>
+        <div class="buttons">
+            <button class="btn prev-btn">Prev</button>
+            <button class="btn next-btn">Next</button>
+            <button class="btn random-btn">Random</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    const reviews = [
+        {
+            id: 1,
+            name: 'Nikola Tesla',
+            job: 'Engineer',
+            img: "img/engeen(1).jpg",
+            text: "Arguably at the top of the list of greatest engineers is Nikola Tesla. He was Serbian, and moved to America at the age of 28 to work with Thomas Edison. Tesla is perhaps one of the most underrated electrical engineers, and didn’t receive credit for a lot of his inventions.",
+        },
+        {
+            id: 2,
+            name: 'Thomas Edison',
+            job: 'American Inventor and Great Businessman',
+            img:  'img/thomas(1).jpg',
+            text: "Thomas Edison was an American inventor and referred to as a great businessman. He holds an astounding 1,097 patents, a record. He goes down as the most prolific inventor in history. A few of his many inventions include the motion picture camera and projector, the phonograph, and the incandescent lightbulb. Can you imagine life without the lightbulb?",
+        },
+        {
+            id: 3,
+            name: 'Alexander Graham Bell',
+            job: 'Engineer',
+            img: 'img/graham(9).jpg',
+            text: "A Scottish born engineer, scientist and inventor, Alexander Graham Bell is credited with providing us with the first telephone. His work was strongly influenced by the fact that unusually both his mother and wife were deaf. This led him to focus on the areas of elocution and speech, and eventually experimenting with hearing devices. The first U.S. patent for the telephone was awarded to him way back in 1876. He also had many other inventions in later life, including in aeronautics and optical telecommunications.",
+        },
+        {
+            id: 4,
+            name: 'Mahendra Singh Dhoni',
+            job: 'Cricketer',
+            img: 'img/msdhoni(1).jpg',
+            text:"Cricket is very popular in India. The team players have many fans across the country. One of the coolest captains in the world is MS Dhoni. This essay on MS Dhoni is for young students studying in Class 5 and above. The language is kept plain and simple for the students to understand. They will be able to write a short essay on MS Dhoni after following the points mentioned in this article.",
+        },
+        {
+            id: 5,
+            name: 'Virat Kohli',
+            job: 'Cricketer',
+            img: 'img/virat(1).jpg',
+            text: "He was born in Delhi, India on November 5, 1988. Virat is the first player in ICC cricket history to win all 3 ICC awards in a single year- ICC , ODI player of the year, ICC Test player of the year and ICC Player of the year award in 2018. He is rated as one of the best batsmen in the world.",
+        },
+    ];
+
+    const img = document.getElementById('person-img');
+    const author = document.getElementById('author');
+    const job = document.getElementById('job');
+    const info = document.getElementById('info');
+
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const randomBtn = document.querySelector('.random-btn');
+
+    let currentItem = 0;
+
+    window.addEventListener('DOMContentLoaded', function () {
+        showPerson(currentItem);
+    });
+
+    function showPerson(person) {
+        const item = reviews[person];
+        img.src = item.img;
+        author.textContent = item.name;
+        job.textContent = item.job;
+        info.textContent = item.text;
+    }
+
+    nextBtn.addEventListener('click', function () {
+        currentItem++;
+        if (currentItem > reviews.length - 1) {
+            currentItem = 0;
+        }
+        showPerson(currentItem);
+    });
+
+    prevBtn.addEventListener('click', function () {
+        currentItem--;
+        if (currentItem < 0) {
+            currentItem = reviews.length - 1;
+        }
+        showPerson(currentItem);
+    });
+
+    randomBtn.addEventListener('click', function () {
+        currentItem = Math.floor(Math.random() * reviews.length);
+        showPerson(currentItem);
+    });
+</script>
+</body>
+</html>

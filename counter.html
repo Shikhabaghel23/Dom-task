@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            height: 100%;
+            width: auto;
+            background-color: rgb(255, 132, 100);
+            background: linear-gradient(
+                90deg,
+                 rgb(255, 132, 100, 1)0%,
+                 rgb(253, 105, 165, 1)100%);
+
+         }
+
+         .container {
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-top: 85px;
+         }
+ 
+        .value {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 70px;
+            font-weight: bold;
+        }
+
+        button {
+            height: 60px;
+            width: 140px;
+            padding: 2px;
+            align-items: center;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold; 
+        } 
+
+        .col {
+            margin-left: 37%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Counter</h1>
+    <h1 class="value">0</h1>
+    </div>
+    <div class="col">
+        <button class="increment">Increment</button>
+        <button class="reset">Reset</button>
+        <button class="decrement">Decrement</button>
+    </div>
+
+    <script>
+        const mainValue = document.querySelector('.value');
+        let currentValue = 0;
+
+        const btnIncrement = document.querySelector(".increment");
+        const btnReset = document.querySelector(".reset");
+        const btnDecrement = document.querySelector(".decrement");
+        
+        btnIncrement.addEventListener("click", () => {
+            currentValue = currentValue + 1;
+            mainValue.textContent = currentValue;
+        })
+
+        btnDecrement.addEventListener("click", () => {
+            currentValue = currentValue - 1;
+            mainValue.textContent = currentValue;
+        })
+
+        btnReset.addEventListener("click", () => {
+            currentValue = 0;
+            mainValue.textContent = currentValue;
+        })
+
+
+    </script>
+    
+</body>
+</html>   

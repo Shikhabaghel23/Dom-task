@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("img/big\(6\).jpg");
+            font-family: sans-serif;
+        }
+
+        .model-project {
+            height: 300px;
+            width: 500px;
+            top: 35%;
+            left: 35%;
+            align-items: center;
+            text-align: center;
+            background-color: aliceblue;
+            justify-content: center;
+            border-radius: 10px;
+            position: absolute;
+        }
+
+        .model-btn {
+            height: 40px;
+            width: 200px;
+            top: 22%;
+            font-size: 20px;
+            border: 1px solid lightskyblue;
+            border-radius: 5px;
+            background-color: rgb(68, 175, 241);
+            cursor: pointer;
+        }
+
+        .model-btn:hover {
+            background: transparent;
+            color: rgb(68, 175, 241);
+        }
+
+        h1 {
+            margin-top: 15%;
+            font-size: 50px;
+        }
+
+        .model-back {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .model-container {
+            height: 270px;
+            width: 520px;
+            padding-top: 30px;
+            font-size: 35px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: white;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="model-project">
+        <h1>Model Project</h1>
+        <button class="model-btn">Open Model</button>
+    </div>
+
+    <div class="model-back">
+        <div class="model-container">
+            <h3>Model Content</h3>
+            <button class="close-btn">X</button>
+        </div>
+    </div>
+
+    <script>
+        const modelBtn = document.querySelector(".model-btn");
+        const modelBack = document.querySelector(".model-back");
+        const closeBtn = document.querySelector(".close-btn");
+
+        modelBtn.addEventListener('click', function() {
+            modelBack.style.display = 'flex';
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modelBack.style.display = 'none';
+        });
+
+        modelBack.addEventListener('click', function(event) {
+            if (event.target === modelBack) {
+                modelBack.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

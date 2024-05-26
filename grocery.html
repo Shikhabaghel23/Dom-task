@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<style>
+
+body {
+    background-color: #01070b;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center; 
+}
+
+h2 {
+    margin-top: 0; 
+}
+
+.input {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 16px;
+}
+
+#taskList {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    float: right; 
+    margin-right: 65px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+button.delete-btn {
+    background-color: #ff5c5c;
+    margin-right: 10px;
+}
+
+button.edit-btn {
+    background-color: #ffb700;
+    margin-right: 10px;
+}
+
+button.complete-btn {
+    background-color: #4caf50;
+    margin-right: 10px;
+}
+
+</style>
+
+</head>
+<body>
+  
+  <div class="container">
+    <h2>Grocery Bud</h2> 
+    <div class="input">
+        <input type="text" placeholder="Enter your task" id="toDo">
+        <button onclick="Add()">Add</button>
+    </div>
+    <div class="text">
+        <ul id="taskList"></ul>
+    </div>
+</div>
+
+
+<script>
+
+let input = document.getElementById("toDo");
+let list = document.getElementById("taskList");
+
+function Add() {
+if (input.value === "") {
+  alert('Please Enter Task');
+} else {
+  let newTask = document.createElement('li');
+      newTask.style.fontSize = "1.6em";
+        
+let taskText = document.createElement('div');
+    taskText.textContent = input.value;
+    newTask.appendChild(taskText);
+
+let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '❌'; 
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.onclick = function() {
+      list.removeChild(newTask);
+    };  
+
+let editBtn = document.createElement('button');
+    editBtn.textContent = '✏️'; 
+    editBtn.classList.add('edit-btn');
+    editBtn.onclick = function() {
+    let editedTask = prompt("Edit Task", taskText.textContent);
+      if (editedTask !== null) {
+          taskText.textContent = editedTask;
+        }
+    };
+
+let completeBtn = document.createElement('button');
+    completeBtn.textContent = '✔️'; 
+    completeBtn.classList.add('complete-btn');
+    completeBtn.onclick = function() {
+    newTask.classList.toggle('completed');
+    };
+
+    newTask.appendChild(deleteBtn);
+    newTask.appendChild(editBtn);
+    newTask.appendChild(completeBtn);
+
+    list.appendChild(newTask);
+    nput.value = "";
+  }
+}  
+
+</script>
+</body>
+</html>

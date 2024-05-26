@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        *{
+            background-color: coral;
+        }
+        .container{
+            margin-top: 35px;
+           text-align: center;
+           font-family: sans-serif;
+           /* background-color: aqua; */
+           /* justify-content: center; */
+        }
+
+        .content {
+            display: flex;
+            gap: 80px;
+            margin-top: 90px;
+            margin-left: 80px;
+            margin-right: 150px;
+        }
+
+        .img{
+            height: 450px;
+        }
+
+        .cont-btn{
+           height: 450px;
+           width: 670px;
+           border: 2px solid black;
+           background-color: aqua;
+        }
+
+        .history, .vision, .goals{
+            height: 60px;
+            width: 220px;
+            font-size: 25px;
+            background-color: white;
+        }
+        #history, #vision,#goals{
+            display:none;
+        }
+
+        .inform {
+            padding: 7px;
+            font-size: 20px;
+        }
+
+        .container, .p{
+            font-size: 20px;
+        }
+
+        .history:focus{
+            color: green;
+            background-color: lightgreen;
+        } 
+
+        .vision:focus{
+            color: blue;
+            background-color: lightblue;
+        }
+
+        .goals:focus{
+            color: red;
+            background-color: pink;
+        }
+
+        /* .cont-btn:blank */
+        
+    </style>
+</head>
+<body>
+<div class="container">
+  <h1>About</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam!</p>
+</div>
+    
+<div class="content">
+  <article>
+    <img src="./img/Ayodhya_Ram_Mandir_(1).jpg" class="img">
+  </article>
+  <article class="tem-about">
+   <div class="cont-btn">
+    <button class="history">History</button>
+    <button class="vision">Vision</button>
+    <button class="goals">Goals</button>
+
+    <div class="inform">
+        <p id="history">
+         The site of the temple has been the subject of 
+         communal tensions between Hindus and Muslims in India,
+         as it is the former location of the Babri Masjid mosque,
+         which was built between 1528 and 1529. 
+         The idols of Rama and Sita were placed in the mosque in 1949,
+         before it was attacked and demolihed in 1992.
+       </p>
+           
+        <p id="vision">
+          The document envisions Ayodhya as the 
+          'global spiritual capital of the world till 2047,
+          ' focusing on sustainability, smart city development,
+          environmental friendliness, and global spiritual tourism.
+       </p> 
+   
+        <p id="goals">
+        This will promote religious harmony in the country.
+        Cultural Significance: The Ayodhya and Ram Mandir 
+        are considered a symbol of the historical and cultural 
+        heritage of the country. Thus. construction of 
+        the temple is a step towards celebrating and preserving 
+        India's cultural heritage. 
+        The drive to build a Ram temple is an attempt to reinstate 
+        the guiding principles our ancient land, of justice and pluralism
+        and negate the forces of religious compulsion and domination that
+        the Babri Masjid signified.
+       </p> 
+    </div>
+   </div>
+  </article>
+</div>
+
+
+
+<script>
+
+    const btnHistory = document.querySelector(".history");
+    const btnVision = document.querySelector(".vision");
+    const btnGoals = document.querySelector(".goals");
+    let history=document.querySelector('#history');
+    let vision=document.querySelector('#vision');
+    let goals=document.querySelector('#goals');
+
+    // button.addEventListener('click', changeBackgroundColor);
+
+    //     function changeBackgroundColor() {
+    //         let color = ['red', 'green', 'blue', 'orange', 'yellow', 'skyblue', 'purple', 'pink', ''];
+
+    btnHistory.addEventListener('click', ()=>{
+       
+        history.style.display='block';
+        vision.style.display='none';
+        goals.style.display='none';
+        history.style.backgroundColor = 'lightgreen';
+    })
+
+    btnHistory.addEventListener('dblclick',() => {
+        history.style.display = 'none';
+    })
+
+    btnVision.addEventListener('click',()=>{
+        history.style.display='none';
+        vision.style.display='block';
+        goals.style.display='none';
+        vision.style.backgroundColor = 'lightblue';
+    })
+    btnGoals.addEventListener('click',()=>{
+        history.style.display='none';
+        vision.style.display='none';
+        goals.style.display='block';
+        goals.style.backgroundColor = 'pink';
+    })
+    
+</script>
+</body>
+</html>

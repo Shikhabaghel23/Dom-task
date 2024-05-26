@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* background-color: #f0f0f0; */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            position: relative;
+            width: 80%;
+            max-width: 80rem;
+            overflow: hidden;
+            margin-top: 2rem;
+            border-radius: 0.5rem;
+        }
+        .slide {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .slide.active {
+            display: flex;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+        .btn-container {
+            margin-top: 1rem;
+        }
+        .btn-container button {
+            background-color: coral;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn-container button:hover {
+            background-color: darkorange;
+        }
+   
+        h1{
+            position: absolute;
+            /* margin-top: 1%; */
+            /* justify-content: center; */
+            align-items: center;
+            text-align: center;
+            font-size: 40px;
+            /* margin-top: 50%; */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slide active">
+            <img src="./img/big(5).jpg" alt="Slide 1">
+            <h1>1</h1>
+        </div>
+        <div class="slide">
+            <img src="./img/big(1).jpg" alt="Slide 2">
+            <h1>2</h1>
+        </div>
+        <div class="slide">
+            <img src="./img/bi(2).jpg" alt="Slide 3">
+            <h1>3</h1>
+        </div>
+        <div class="slide">
+            <img src="./img/big(4).jpg" alt="Slide 4">
+            <h1>4</h1>
+        </div>
+        <div class="slide">
+            <img src="./img/big(6).jpg" alt="Slide 5">
+            <h1>5</h1>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button type="button" class="prevBtn">Prev</button>
+        <button type="button" class="nextBtn">Next</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prevBtn');
+        const nextBtn = document.querySelector('.nextBtn');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>

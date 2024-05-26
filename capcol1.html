@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+
+.box {
+  height: 100vh;
+  width: auto;
+  text-align:center;
+  }
+
+#btn {
+  height: 60px;
+  width: 150px;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  border: 2px solid black;
+  }
+
+
+</style>
+
+
+
+<div class="container">
+  <div class="box">
+  <h1>Background Color</h1>
+  <!-- <h1></h1> -->
+  <button id="btn">Click Me</button>
+      </div>
+    
+  </div>
+    <script>
+      let box = document.querySelector(".box");
+      let button = document.getElementById("btn");
+      button.addEventListener('click', changeBackgroundColor);
+      
+     
+
+      function changeBackgroundColor() {
+            let color = ['red', 'green', 'blue', 'orange', 'yellow', 'skyblue', 'purple', 'pink', ''];
+            let randomColor = color[Math.floor(Math.random() * color.length)];
+            document.body.style.background = randomColor;
+            let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D"];
+            let randomNum1 = num[Math.floor(Math.random() * num.length)];
+            let randomNum2 = num[Math.floor(Math.random() * num.length)];
+            let randomNum3 = num[Math.floor(Math.random() * num.length)];
+            let randomNum4 = num[Math.floor(Math.random() * num.length)];
+            let randomNum5 = num[Math.floor(Math.random() * num.length)];
+            let subarr = ['#',randomNum1, randomNum2, randomNum3, randomNum4, randomNum5].join('');
+            box.children[1].innerHTML = subarr;
+        }
+         
+    </script>
+    
+</body>
+</html>
